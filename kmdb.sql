@@ -393,7 +393,9 @@ actors_id,
 movies_id  
 )
 VALUES (
-    "Joker"
+    "Joker",
+    "6",
+    "2"
 );
 INSERT INTO characters (
 name,
@@ -401,7 +403,9 @@ actors_id,
 movies_id  
 )
 VALUES (
-    "Harvery Dent"
+    "Harvey Dent",
+    "7",
+    "2"
 );
 INSERT INTO characters (
 name,
@@ -409,7 +413,9 @@ actors_id,
 movies_id  
 )
 VALUES (
-    "Bane"
+    "Bane",
+    "9",
+    "3"
 );
 INSERT INTO characters (
 name,
@@ -417,7 +423,9 @@ actors_id,
 movies_id  
 )
 VALUES (
-    "John Blake"
+    "John Blake",
+    "10",
+    "3"
 );
 INSERT INTO characters (
 name,
