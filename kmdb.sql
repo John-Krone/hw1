@@ -114,7 +114,7 @@ DROP TABLE IF EXISTS characters;
 CREATE TABLE movies (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 title TEXT,
-year_relesase INTEGER,
+year_released INTEGER,
 MPAA_rating TEXT
 );
 
@@ -127,18 +127,208 @@ last_name TEXT
 CREATE TABLE studios (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 name TEXT,
-movie_ID INTEGER
+movies_id INTEGER
 );
 
 CREATE TABLE characters(
 id INTEGER PRIMARY KEY AUTOINCREMENT,
-movie_id INTEGER,
+name TEXT,
+movies_id INTEGER,
 actor_id INTEGER
 );
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+INSERT INTO movies (
+title,
+year_released,
+MPAA_rating
+)
+VALUES (
+"Batman Begins",
+"2005",
+"PG-13"
+);
+
+INSERT INTO movies (
+title,
+year_released,
+MPAA_rating
+)
+VALUES (
+"The Dark Knight",
+"2008",
+"PG-13"
+);
+
+INSERT INTO movies (
+title,
+year_released,
+MPAA_rating
+)
+VALUES (
+"The Dark Knight Rises",
+"2012",
+"PG-13"
+);
+
+INSERT INTO actors (
+first_name,
+last_name   
+)
+VALUES (
+    "Christian",
+    "Bale"
+);
+INSERT INTO actors (
+first_name,
+last_name   
+)
+VALUES (
+    "Michael",
+    "Caine"
+);
+INSERT INTO actors (
+first_name,
+last_name   
+)
+VALUES (
+    "Liam",
+    "Neeson"
+);
+INSERT INTO actors (
+first_name,
+last_name   
+)
+VALUES (
+    "Katie",
+    "Holmes"
+);
+INSERT INTO actors (
+first_name,
+last_name   
+)
+VALUES (
+    "Gary",
+    "Oldman"
+);
+INSERT INTO actors (
+first_name,
+last_name   
+)
+VALUES (
+    "Heath",
+    "Ledger"
+);
+INSERT INTO actors (
+first_name,
+last_name   
+)
+VALUES (
+    "Aaron",
+    "Eckhart"
+);
+INSERT INTO actors (
+first_name,
+last_name   
+)
+VALUES (
+    "Maggie",
+    "Gyllenhaal"
+);
+INSERT INTO actors (
+first_name,
+last_name   
+)
+VALUES (
+    "Tom",
+    "Hardy"
+);
+INSERT INTO actors (
+first_name,
+last_name   
+)
+VALUES (
+    "Joseph",
+    "Gordon-Levitt"
+);
+INSERT INTO actors (
+first_name,
+last_name   
+)
+VALUES (
+    "Anne",
+    "Hathaway"
+);
+
+INSERT INTO studios (
+name  
+)
+VALUES (
+    "Warner Bros."
+);
+
+INSERT INTO characters (
+name  
+)
+VALUES (
+    "Bruce Wayne"
+);
+INSERT INTO characters (
+name  
+)
+VALUES (
+    "Alfred"
+);
+INSERT INTO characters (
+name  
+)
+VALUES (
+    "Ra's Al Guhl"
+);
+INSERT INTO characters (
+name  
+)
+VALUES (
+    "Rachel Dawes"
+);
+INSERT INTO characters (
+name  
+)
+VALUES (
+    "Commissioner Gordon"
+);
+INSERT INTO characters (
+name  
+)
+VALUES (
+    "Joker"
+);
+INSERT INTO characters (
+name  
+)
+VALUES (
+    "Harvery Dent"
+);
+INSERT INTO characters (
+name  
+)
+VALUES (
+    "Bane"
+);
+INSERT INTO characters (
+name  
+)
+VALUES (
+    "John Blake"
+);
+INSERT INTO characters (
+name  
+)
+VALUES (
+    "Selina Kyle"
+);
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -148,6 +338,8 @@ actor_id INTEGER
 -- The SQL statement for the movies output
 -- TODO!
 
+SELECT movies.title, movies.year_released,movies.MPAA_rating
+FROM movies;
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
