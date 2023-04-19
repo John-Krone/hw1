@@ -111,26 +111,26 @@ DROP TABLE IF EXISTS studios;
 DROP TABLE IF EXISTS characters;
 -- Create new tables, according to your domain model
 -- TODO!
-CREATE TABLE (movies
+CREATE TABLE movies (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 title TEXT,
 year_relesase INTEGER,
 MPAA_rating TEXT
 );
 
-CREATE TABLE (actors
+CREATE TABLE actors(
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 first_name TEXT,
 last_name TEXT
 );
 
-CREATE TABLE (studios
+CREATE TABLE studios (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 name TEXT,
 movie_ID INTEGER
 );
 
-CREATE TABLE (characters
+CREATE TABLE characters(
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 movie_id INTEGER,
 actor_id INTEGER
