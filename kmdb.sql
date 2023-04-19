@@ -263,10 +263,28 @@ VALUES (
 );
 
 INSERT INTO studios (
-name  
+name,
+movies_id
 )
 VALUES (
-    "Warner Bros."
+    "Warner Bros.",
+    "1"
+);
+INSERT INTO studios (
+name,
+movies_id
+)
+VALUES (
+    "Warner Bros.",
+    "2"
+);
+INSERT INTO studios (
+name,
+movies_id
+)
+VALUES (
+    "Warner Bros.",
+    "3"
 );
 
 INSERT INTO characters (
@@ -338,8 +356,10 @@ VALUES (
 -- The SQL statement for the movies output
 -- TODO!
 
-SELECT movies.title, movies.year_released,movies.MPAA_rating
-FROM movies;
+SELECT movies.title, movies.year_released,movies.MPAA_rating, studios.name
+FROM movies INNER JOIN studios ON studios.movies_id = movies_id
+GROUP BY movies.id;
+
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
