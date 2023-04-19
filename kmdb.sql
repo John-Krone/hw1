@@ -134,7 +134,7 @@ CREATE TABLE characters(
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 name TEXT,
 movies_id INTEGER,
-actor_id INTEGER
+actors_id INTEGER
 );
 
 -- Insert data into your database that reflects the sample data shown above
@@ -288,61 +288,141 @@ VALUES (
 );
 
 INSERT INTO characters (
-name  
+name,
+actors_id,
+movies_id
 )
 VALUES (
-    "Bruce Wayne"
+    "Bruce Wayne",
+    "1",
+    "1"
 );
 INSERT INTO characters (
-name  
+name,
+actors_id,
+movies_id
+)
+VALUES (
+    "Bruce Wayne",
+    "1",
+    "2"
+);
+INSERT INTO characters (
+name,
+actors_id,
+movies_id
+)
+VALUES (
+    "Bruce Wayne",
+    "1",
+    "3"
+);
+INSERT INTO characters (
+name,
+actors_id,
+movies_id  
 )
 VALUES (
     "Alfred"
+    "2",
+    "1"
 );
 INSERT INTO characters (
-name  
+name,
+actors_id,
+movies_id  
 )
 VALUES (
-    "Ra's Al Guhl"
+    "Alfred"
+    "2",
+    "2"
 );
 INSERT INTO characters (
-name  
+name,
+actors_id,
+movies_id  
 )
 VALUES (
-    "Rachel Dawes"
+    "Ra's Al Guhl",
+    "3",
+    "1"
 );
 INSERT INTO characters (
-name  
+name,
+actors_id,
+movies_id  
 )
 VALUES (
-    "Commissioner Gordon"
+    "Rachel Dawes",
+    "4",
+    "1"
 );
 INSERT INTO characters (
-name  
+name,
+actors_id,
+movies_id  
+)
+VALUES (
+    "Rachel Dawes",
+    "4",
+    "2"
+);
+INSERT INTO characters (
+name,
+actors_id,
+movies_id  
+)
+VALUES (
+    "Commissioner Gordon",
+    "5",
+    "1"
+);
+INSERT INTO characters (
+name,
+actors_id,
+movies_id  
+)
+VALUES (
+    "Commissioner Gordon",
+    "5",
+    "3"
+);
+INSERT INTO characters (
+name,
+actors_id,
+movies_id  
 )
 VALUES (
     "Joker"
 );
 INSERT INTO characters (
-name  
+name,
+actors_id,
+movies_id  
 )
 VALUES (
     "Harvery Dent"
 );
 INSERT INTO characters (
-name  
+name,
+actors_id,
+movies_id  
 )
 VALUES (
     "Bane"
 );
 INSERT INTO characters (
-name  
+name,
+actors_id,
+movies_id  
 )
 VALUES (
     "John Blake"
 );
 INSERT INTO characters (
-name  
+name,
+actors_id,
+movies_id  
 )
 VALUES (
     "Selina Kyle"
@@ -370,4 +450,14 @@ GROUP BY movies.id;
 -- The SQL statement for the cast output
 -- TODO!
 
+SELECT movies.title, actors.first_name, actors.last_name,characters.name
+FROM characters
+INNER JOIN movies ON characters.movies_id = movies.movies_id
+INNER JOIN actors ON characters.actors.id = actors.actors_id
+;
 
+.print "========"
+
+SELECT * FROM actors;
+
+SELECT * FROM characters;
