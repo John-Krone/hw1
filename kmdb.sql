@@ -433,7 +433,9 @@ actors_id,
 movies_id  
 )
 VALUES (
-    "Selina Kyle"
+    "Selina Kyle",
+    "11",
+    "3"
 );
 
 -- Prints a header for the movies output
@@ -460,12 +462,7 @@ GROUP BY movies.id;
 
 SELECT movies.title, actors.first_name, actors.last_name,characters.name
 FROM characters
-INNER JOIN movies ON characters.movies_id = movies.movies_id
-INNER JOIN actors ON characters.actors.id = actors.actors_id
+INNER JOIN movies ON characters.movies_id = movies.id
+INNER JOIN actors ON characters.actors_id = actors.id
+ORDER BY movies.title
 ;
-
-.print "========"
-
-SELECT * FROM actors;
-
-SELECT * FROM characters;
